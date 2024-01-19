@@ -1,49 +1,76 @@
 import React from "react";
-import logo from "./logo.png";
+import logo from "./images/logo-50.png";
+
 export default function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        {/* Logo in the center */}
-        <a className="navbar-brand" href="#">
-          <img src={logo} alt="Logo" />
-        </a>
+    <nav className="navbar navbar-expand-lg navbar-dark px-3" style={{ backgroundColor:'#284d28' }}>
+      <div className="container-fluid mx-5">
+        <div style={{ borderRadius: "50%", padding:"10px", backgroundColor:"#FFD700" }}>
+          <a className="navbar-brand" href="#">
+            <img src={logo} alt="Logo" />
+          </a>
+        </div>
 
-        {/* Navbar toggler for smaller screens */}
         <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Links on both sides */}
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-5 mb-2 mb-lg-0">
+        <div className=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav ms-auto ">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
+              <a className="nav-link mx-2 active" aria-current="page" href="#">
+                Package Trip
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
+              <a className="nav-link mx-2" href="#">
+                Day Trip
               </a>
             </li>
             <li className="nav-item">
+              <a className="nav-link mx-2" href="#">
+                Pricing
+              </a>
+            </li>
+            <li className="nav-item dropdown">
               <a
-                className="nav-link disabled"
+                className="nav-link mx-2 dropdown-toggle"
                 href="#"
-                tabIndex="-1"
-                aria-disabled="true"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-                Disabled
+                Trip Types
               </a>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Sightseeing
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Cruises
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Package Tour
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
